@@ -61,7 +61,7 @@ public class CreditCheck extends javax.servlet.http.HttpServlet {
 
                 // offer platinum members more money based on their credit score
                 if (currentCustomer != null && currentCustomer.getLevel() == "Platinum"){
-                    long coeff = MAX_SCORE-currentCustomer.getCreditScore()/MAX_SCORE;
+                    double coeff = MAX_SCORE-currentCustomer.getCreditScore()/MAX_SCORE;
                     double adjustment = this.currentApplication.getAmount()/coeff;
                     adjustedAmount += adjustment;
                 }
